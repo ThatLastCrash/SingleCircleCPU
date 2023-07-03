@@ -1,0 +1,654 @@
+Classic Timing Analyzer report for SingleCircleCPU
+Thu Dec 15 23:56:05 2022
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tco
+  8. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                  ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                     ; To                           ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+------------------------------+------------+----------+--------------+
+; Worst-case tco               ; N/A   ; None          ; 28.514 ns                        ; Instruction:ins|temp4[5] ; DataOut[8]                   ; clk        ; --       ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 22.19 MHz ( period = 45.064 ns ) ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~47 ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                          ;                              ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C70F896C6       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 6      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                   ;
++-----------------------------------------+-----------------------------------------------------+--------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                     ; To                            ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 22.19 MHz ( period = 45.064 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~47  ; clk        ; clk      ; None                        ; None                      ; 22.281 ns               ;
+; N/A                                     ; 22.21 MHz ( period = 45.030 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~47  ; clk        ; clk      ; None                        ; None                      ; 22.266 ns               ;
+; N/A                                     ; 22.25 MHz ( period = 44.934 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~47  ; clk        ; clk      ; None                        ; None                      ; 22.218 ns               ;
+; N/A                                     ; 22.30 MHz ( period = 44.840 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~47  ; clk        ; clk      ; None                        ; None                      ; 22.171 ns               ;
+; N/A                                     ; 22.36 MHz ( period = 44.724 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~495 ; clk        ; clk      ; None                        ; None                      ; 22.084 ns               ;
+; N/A                                     ; 22.36 MHz ( period = 44.722 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~207 ; clk        ; clk      ; None                        ; None                      ; 22.094 ns               ;
+; N/A                                     ; 22.36 MHz ( period = 44.720 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~143 ; clk        ; clk      ; None                        ; None                      ; 22.093 ns               ;
+; N/A                                     ; 22.38 MHz ( period = 44.690 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~495 ; clk        ; clk      ; None                        ; None                      ; 22.069 ns               ;
+; N/A                                     ; 22.38 MHz ( period = 44.688 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~207 ; clk        ; clk      ; None                        ; None                      ; 22.079 ns               ;
+; N/A                                     ; 22.38 MHz ( period = 44.686 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~143 ; clk        ; clk      ; None                        ; None                      ; 22.078 ns               ;
+; N/A                                     ; 22.38 MHz ( period = 44.682 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~175 ; clk        ; clk      ; None                        ; None                      ; 22.076 ns               ;
+; N/A                                     ; 22.40 MHz ( period = 44.648 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~175 ; clk        ; clk      ; None                        ; None                      ; 22.061 ns               ;
+; N/A                                     ; 22.42 MHz ( period = 44.594 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~495 ; clk        ; clk      ; None                        ; None                      ; 22.021 ns               ;
+; N/A                                     ; 22.43 MHz ( period = 44.592 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~207 ; clk        ; clk      ; None                        ; None                      ; 22.031 ns               ;
+; N/A                                     ; 22.43 MHz ( period = 44.590 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~143 ; clk        ; clk      ; None                        ; None                      ; 22.030 ns               ;
+; N/A                                     ; 22.45 MHz ( period = 44.552 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~175 ; clk        ; clk      ; None                        ; None                      ; 22.013 ns               ;
+; N/A                                     ; 22.45 MHz ( period = 44.540 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~47  ; clk        ; clk      ; None                        ; None                      ; 22.021 ns               ;
+; N/A                                     ; 22.46 MHz ( period = 44.516 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~47  ; clk        ; clk      ; None                        ; None                      ; 22.007 ns               ;
+; N/A                                     ; 22.47 MHz ( period = 44.500 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~495 ; clk        ; clk      ; None                        ; None                      ; 21.974 ns               ;
+; N/A                                     ; 22.47 MHz ( period = 44.498 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~207 ; clk        ; clk      ; None                        ; None                      ; 21.984 ns               ;
+; N/A                                     ; 22.47 MHz ( period = 44.496 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~143 ; clk        ; clk      ; None                        ; None                      ; 21.983 ns               ;
+; N/A                                     ; 22.49 MHz ( period = 44.458 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~175 ; clk        ; clk      ; None                        ; None                      ; 21.966 ns               ;
+; N/A                                     ; 22.49 MHz ( period = 44.456 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~335 ; clk        ; clk      ; None                        ; None                      ; 21.995 ns               ;
+; N/A                                     ; 22.50 MHz ( period = 44.450 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~431 ; clk        ; clk      ; None                        ; None                      ; 21.990 ns               ;
+; N/A                                     ; 22.51 MHz ( period = 44.434 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~271 ; clk        ; clk      ; None                        ; None                      ; 21.973 ns               ;
+; N/A                                     ; 22.51 MHz ( period = 44.422 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~335 ; clk        ; clk      ; None                        ; None                      ; 21.980 ns               ;
+; N/A                                     ; 22.51 MHz ( period = 44.416 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~431 ; clk        ; clk      ; None                        ; None                      ; 21.975 ns               ;
+; N/A                                     ; 22.52 MHz ( period = 44.400 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~271 ; clk        ; clk      ; None                        ; None                      ; 21.958 ns               ;
+; N/A                                     ; 22.52 MHz ( period = 44.398 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~384 ; clk        ; clk      ; None                        ; None                      ; 21.960 ns               ;
+; N/A                                     ; 22.53 MHz ( period = 44.384 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~320 ; clk        ; clk      ; None                        ; None                      ; 21.969 ns               ;
+; N/A                                     ; 22.54 MHz ( period = 44.364 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~384 ; clk        ; clk      ; None                        ; None                      ; 21.945 ns               ;
+; N/A                                     ; 22.55 MHz ( period = 44.352 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~256 ; clk        ; clk      ; None                        ; None                      ; 21.948 ns               ;
+; N/A                                     ; 22.55 MHz ( period = 44.350 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~320 ; clk        ; clk      ; None                        ; None                      ; 21.954 ns               ;
+; N/A                                     ; 22.55 MHz ( period = 44.342 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~111 ; clk        ; clk      ; None                        ; None                      ; 21.914 ns               ;
+; N/A                                     ; 22.55 MHz ( period = 44.342 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~239 ; clk        ; clk      ; None                        ; None                      ; 21.914 ns               ;
+; N/A                                     ; 22.56 MHz ( period = 44.326 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~335 ; clk        ; clk      ; None                        ; None                      ; 21.932 ns               ;
+; N/A                                     ; 22.56 MHz ( period = 44.320 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~431 ; clk        ; clk      ; None                        ; None                      ; 21.927 ns               ;
+; N/A                                     ; 22.56 MHz ( period = 44.318 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~256 ; clk        ; clk      ; None                        ; None                      ; 21.933 ns               ;
+; N/A                                     ; 22.57 MHz ( period = 44.308 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~111 ; clk        ; clk      ; None                        ; None                      ; 21.899 ns               ;
+; N/A                                     ; 22.57 MHz ( period = 44.308 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~239 ; clk        ; clk      ; None                        ; None                      ; 21.899 ns               ;
+; N/A                                     ; 22.57 MHz ( period = 44.304 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~271 ; clk        ; clk      ; None                        ; None                      ; 21.910 ns               ;
+; N/A                                     ; 22.59 MHz ( period = 44.268 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~384 ; clk        ; clk      ; None                        ; None                      ; 21.897 ns               ;
+; N/A                                     ; 22.60 MHz ( period = 44.254 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~320 ; clk        ; clk      ; None                        ; None                      ; 21.906 ns               ;
+; N/A                                     ; 22.61 MHz ( period = 44.232 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~335 ; clk        ; clk      ; None                        ; None                      ; 21.885 ns               ;
+; N/A                                     ; 22.61 MHz ( period = 44.226 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~431 ; clk        ; clk      ; None                        ; None                      ; 21.880 ns               ;
+; N/A                                     ; 22.61 MHz ( period = 44.222 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~256 ; clk        ; clk      ; None                        ; None                      ; 21.885 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.212 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~111 ; clk        ; clk      ; None                        ; None                      ; 21.851 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.212 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~239 ; clk        ; clk      ; None                        ; None                      ; 21.851 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.210 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~271 ; clk        ; clk      ; None                        ; None                      ; 21.863 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.200 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~495 ; clk        ; clk      ; None                        ; None                      ; 21.824 ns               ;
+; N/A                                     ; 22.63 MHz ( period = 44.198 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~207 ; clk        ; clk      ; None                        ; None                      ; 21.834 ns               ;
+; N/A                                     ; 22.63 MHz ( period = 44.196 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~143 ; clk        ; clk      ; None                        ; None                      ; 21.833 ns               ;
+; N/A                                     ; 22.63 MHz ( period = 44.194 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~463 ; clk        ; clk      ; None                        ; None                      ; 21.860 ns               ;
+; N/A                                     ; 22.64 MHz ( period = 44.176 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~15  ; clk        ; clk      ; None                        ; None                      ; 21.843 ns               ;
+; N/A                                     ; 22.64 MHz ( period = 44.176 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~495 ; clk        ; clk      ; None                        ; None                      ; 21.810 ns               ;
+; N/A                                     ; 22.64 MHz ( period = 44.176 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~399 ; clk        ; clk      ; None                        ; None                      ; 21.843 ns               ;
+; N/A                                     ; 22.64 MHz ( period = 44.174 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~207 ; clk        ; clk      ; None                        ; None                      ; 21.820 ns               ;
+; N/A                                     ; 22.64 MHz ( period = 44.174 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~384 ; clk        ; clk      ; None                        ; None                      ; 21.850 ns               ;
+; N/A                                     ; 22.64 MHz ( period = 44.172 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~143 ; clk        ; clk      ; None                        ; None                      ; 21.819 ns               ;
+; N/A                                     ; 22.64 MHz ( period = 44.160 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~79  ; clk        ; clk      ; None                        ; None                      ; 21.847 ns               ;
+; N/A                                     ; 22.64 MHz ( period = 44.160 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~320 ; clk        ; clk      ; None                        ; None                      ; 21.859 ns               ;
+; N/A                                     ; 22.64 MHz ( period = 44.160 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~463 ; clk        ; clk      ; None                        ; None                      ; 21.845 ns               ;
+; N/A                                     ; 22.65 MHz ( period = 44.158 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~175 ; clk        ; clk      ; None                        ; None                      ; 21.816 ns               ;
+; N/A                                     ; 22.65 MHz ( period = 44.142 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~15  ; clk        ; clk      ; None                        ; None                      ; 21.828 ns               ;
+; N/A                                     ; 22.65 MHz ( period = 44.142 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~399 ; clk        ; clk      ; None                        ; None                      ; 21.828 ns               ;
+; N/A                                     ; 22.66 MHz ( period = 44.134 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~175 ; clk        ; clk      ; None                        ; None                      ; 21.802 ns               ;
+; N/A                                     ; 22.66 MHz ( period = 44.128 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~256 ; clk        ; clk      ; None                        ; None                      ; 21.838 ns               ;
+; N/A                                     ; 22.66 MHz ( period = 44.126 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~480 ; clk        ; clk      ; None                        ; None                      ; 21.824 ns               ;
+; N/A                                     ; 22.66 MHz ( period = 44.126 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~79  ; clk        ; clk      ; None                        ; None                      ; 21.832 ns               ;
+; N/A                                     ; 22.67 MHz ( period = 44.120 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~448 ; clk        ; clk      ; None                        ; None                      ; 21.823 ns               ;
+; N/A                                     ; 22.67 MHz ( period = 44.118 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~111 ; clk        ; clk      ; None                        ; None                      ; 21.804 ns               ;
+; N/A                                     ; 22.67 MHz ( period = 44.118 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~239 ; clk        ; clk      ; None                        ; None                      ; 21.804 ns               ;
+; N/A                                     ; 22.68 MHz ( period = 44.098 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~224 ; clk        ; clk      ; None                        ; None                      ; 21.826 ns               ;
+; N/A                                     ; 22.68 MHz ( period = 44.092 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~480 ; clk        ; clk      ; None                        ; None                      ; 21.809 ns               ;
+; N/A                                     ; 22.68 MHz ( period = 44.086 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~448 ; clk        ; clk      ; None                        ; None                      ; 21.808 ns               ;
+; N/A                                     ; 22.69 MHz ( period = 44.064 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~224 ; clk        ; clk      ; None                        ; None                      ; 21.811 ns               ;
+; N/A                                     ; 22.69 MHz ( period = 44.064 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~463 ; clk        ; clk      ; None                        ; None                      ; 21.797 ns               ;
+; N/A                                     ; 22.70 MHz ( period = 44.046 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~15  ; clk        ; clk      ; None                        ; None                      ; 21.780 ns               ;
+; N/A                                     ; 22.70 MHz ( period = 44.046 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~399 ; clk        ; clk      ; None                        ; None                      ; 21.780 ns               ;
+; N/A                                     ; 22.71 MHz ( period = 44.030 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~79  ; clk        ; clk      ; None                        ; None                      ; 21.784 ns               ;
+; N/A                                     ; 22.72 MHz ( period = 44.022 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~406 ; clk        ; clk      ; None                        ; None                      ; 21.711 ns               ;
+; N/A                                     ; 22.72 MHz ( period = 44.022 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~470 ; clk        ; clk      ; None                        ; None                      ; 21.711 ns               ;
+; N/A                                     ; 22.73 MHz ( period = 43.996 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~480 ; clk        ; clk      ; None                        ; None                      ; 21.761 ns               ;
+; N/A                                     ; 22.73 MHz ( period = 43.990 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~448 ; clk        ; clk      ; None                        ; None                      ; 21.760 ns               ;
+; N/A                                     ; 22.73 MHz ( period = 43.988 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~406 ; clk        ; clk      ; None                        ; None                      ; 21.696 ns               ;
+; N/A                                     ; 22.73 MHz ( period = 43.988 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~470 ; clk        ; clk      ; None                        ; None                      ; 21.696 ns               ;
+; N/A                                     ; 22.73 MHz ( period = 43.988 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~303 ; clk        ; clk      ; None                        ; None                      ; 21.753 ns               ;
+; N/A                                     ; 22.74 MHz ( period = 43.970 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~463 ; clk        ; clk      ; None                        ; None                      ; 21.750 ns               ;
+; N/A                                     ; 22.74 MHz ( period = 43.968 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~224 ; clk        ; clk      ; None                        ; None                      ; 21.763 ns               ;
+; N/A                                     ; 22.75 MHz ( period = 43.954 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~96  ; clk        ; clk      ; None                        ; None                      ; 21.745 ns               ;
+; N/A                                     ; 22.75 MHz ( period = 43.954 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~303 ; clk        ; clk      ; None                        ; None                      ; 21.738 ns               ;
+; N/A                                     ; 22.75 MHz ( period = 43.952 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~15  ; clk        ; clk      ; None                        ; None                      ; 21.733 ns               ;
+; N/A                                     ; 22.75 MHz ( period = 43.952 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~399 ; clk        ; clk      ; None                        ; None                      ; 21.733 ns               ;
+; N/A                                     ; 22.75 MHz ( period = 43.948 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~32  ; clk        ; clk      ; None                        ; None                      ; 21.742 ns               ;
+; N/A                                     ; 22.76 MHz ( period = 43.936 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~79  ; clk        ; clk      ; None                        ; None                      ; 21.737 ns               ;
+; N/A                                     ; 22.76 MHz ( period = 43.932 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~335 ; clk        ; clk      ; None                        ; None                      ; 21.735 ns               ;
+; N/A                                     ; 22.77 MHz ( period = 43.926 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~431 ; clk        ; clk      ; None                        ; None                      ; 21.730 ns               ;
+; N/A                                     ; 22.77 MHz ( period = 43.924 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~160 ; clk        ; clk      ; None                        ; None                      ; 21.743 ns               ;
+; N/A                                     ; 22.77 MHz ( period = 43.920 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~96  ; clk        ; clk      ; None                        ; None                      ; 21.730 ns               ;
+; N/A                                     ; 22.77 MHz ( period = 43.916 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~288 ; clk        ; clk      ; None                        ; None                      ; 21.739 ns               ;
+; N/A                                     ; 22.77 MHz ( period = 43.914 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~32  ; clk        ; clk      ; None                        ; None                      ; 21.727 ns               ;
+; N/A                                     ; 22.77 MHz ( period = 43.910 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~271 ; clk        ; clk      ; None                        ; None                      ; 21.713 ns               ;
+; N/A                                     ; 22.77 MHz ( period = 43.908 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~335 ; clk        ; clk      ; None                        ; None                      ; 21.721 ns               ;
+; N/A                                     ; 22.78 MHz ( period = 43.902 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~480 ; clk        ; clk      ; None                        ; None                      ; 21.714 ns               ;
+; N/A                                     ; 22.78 MHz ( period = 43.902 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~431 ; clk        ; clk      ; None                        ; None                      ; 21.716 ns               ;
+; N/A                                     ; 22.78 MHz ( period = 43.896 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~448 ; clk        ; clk      ; None                        ; None                      ; 21.713 ns               ;
+; N/A                                     ; 22.78 MHz ( period = 43.892 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~406 ; clk        ; clk      ; None                        ; None                      ; 21.648 ns               ;
+; N/A                                     ; 22.78 MHz ( period = 43.892 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~470 ; clk        ; clk      ; None                        ; None                      ; 21.648 ns               ;
+; N/A                                     ; 22.78 MHz ( period = 43.890 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~160 ; clk        ; clk      ; None                        ; None                      ; 21.728 ns               ;
+; N/A                                     ; 22.79 MHz ( period = 43.886 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~271 ; clk        ; clk      ; None                        ; None                      ; 21.699 ns               ;
+; N/A                                     ; 22.79 MHz ( period = 43.882 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~288 ; clk        ; clk      ; None                        ; None                      ; 21.724 ns               ;
+; N/A                                     ; 22.79 MHz ( period = 43.874 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~224 ; clk        ; clk      ; None                        ; None                      ; 21.716 ns               ;
+; N/A                                     ; 22.79 MHz ( period = 43.874 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~384 ; clk        ; clk      ; None                        ; None                      ; 21.700 ns               ;
+; N/A                                     ; 22.80 MHz ( period = 43.860 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~320 ; clk        ; clk      ; None                        ; None                      ; 21.709 ns               ;
+; N/A                                     ; 22.80 MHz ( period = 43.858 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~303 ; clk        ; clk      ; None                        ; None                      ; 21.690 ns               ;
+; N/A                                     ; 22.81 MHz ( period = 43.850 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~384 ; clk        ; clk      ; None                        ; None                      ; 21.686 ns               ;
+; N/A                                     ; 22.81 MHz ( period = 43.836 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~320 ; clk        ; clk      ; None                        ; None                      ; 21.695 ns               ;
+; N/A                                     ; 22.82 MHz ( period = 43.828 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~256 ; clk        ; clk      ; None                        ; None                      ; 21.688 ns               ;
+; N/A                                     ; 22.82 MHz ( period = 43.824 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~96  ; clk        ; clk      ; None                        ; None                      ; 21.682 ns               ;
+; N/A                                     ; 22.82 MHz ( period = 43.818 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~32  ; clk        ; clk      ; None                        ; None                      ; 21.679 ns               ;
+; N/A                                     ; 22.82 MHz ( period = 43.818 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~111 ; clk        ; clk      ; None                        ; None                      ; 21.654 ns               ;
+; N/A                                     ; 22.82 MHz ( period = 43.818 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~239 ; clk        ; clk      ; None                        ; None                      ; 21.654 ns               ;
+; N/A                                     ; 22.83 MHz ( period = 43.804 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~256 ; clk        ; clk      ; None                        ; None                      ; 21.674 ns               ;
+; N/A                                     ; 22.83 MHz ( period = 43.798 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~406 ; clk        ; clk      ; None                        ; None                      ; 21.601 ns               ;
+; N/A                                     ; 22.83 MHz ( period = 43.798 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~470 ; clk        ; clk      ; None                        ; None                      ; 21.601 ns               ;
+; N/A                                     ; 22.83 MHz ( period = 43.794 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~160 ; clk        ; clk      ; None                        ; None                      ; 21.680 ns               ;
+; N/A                                     ; 22.83 MHz ( period = 43.794 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~111 ; clk        ; clk      ; None                        ; None                      ; 21.640 ns               ;
+; N/A                                     ; 22.83 MHz ( period = 43.794 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~239 ; clk        ; clk      ; None                        ; None                      ; 21.640 ns               ;
+; N/A                                     ; 22.84 MHz ( period = 43.786 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~192 ; clk        ; clk      ; None                        ; None                      ; 21.666 ns               ;
+; N/A                                     ; 22.84 MHz ( period = 43.786 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~288 ; clk        ; clk      ; None                        ; None                      ; 21.676 ns               ;
+; N/A                                     ; 22.84 MHz ( period = 43.784 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~64  ; clk        ; clk      ; None                        ; None                      ; 21.665 ns               ;
+; N/A                                     ; 22.85 MHz ( period = 43.764 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~303 ; clk        ; clk      ; None                        ; None                      ; 21.643 ns               ;
+; N/A                                     ; 22.86 MHz ( period = 43.752 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~192 ; clk        ; clk      ; None                        ; None                      ; 21.651 ns               ;
+; N/A                                     ; 22.86 MHz ( period = 43.750 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~64  ; clk        ; clk      ; None                        ; None                      ; 21.650 ns               ;
+; N/A                                     ; 22.87 MHz ( period = 43.730 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~96  ; clk        ; clk      ; None                        ; None                      ; 21.635 ns               ;
+; N/A                                     ; 22.87 MHz ( period = 43.724 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~32  ; clk        ; clk      ; None                        ; None                      ; 21.632 ns               ;
+; N/A                                     ; 22.88 MHz ( period = 43.700 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~160 ; clk        ; clk      ; None                        ; None                      ; 21.633 ns               ;
+; N/A                                     ; 22.89 MHz ( period = 43.692 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~288 ; clk        ; clk      ; None                        ; None                      ; 21.629 ns               ;
+; N/A                                     ; 22.89 MHz ( period = 43.678 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~298 ; clk        ; clk      ; None                        ; None                      ; 21.598 ns               ;
+; N/A                                     ; 22.90 MHz ( period = 43.670 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~463 ; clk        ; clk      ; None                        ; None                      ; 21.600 ns               ;
+; N/A                                     ; 22.90 MHz ( period = 43.668 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~118 ; clk        ; clk      ; None                        ; None                      ; 21.542 ns               ;
+; N/A                                     ; 22.90 MHz ( period = 43.668 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~342 ; clk        ; clk      ; None                        ; None                      ; 21.542 ns               ;
+; N/A                                     ; 22.91 MHz ( period = 43.656 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~192 ; clk        ; clk      ; None                        ; None                      ; 21.603 ns               ;
+; N/A                                     ; 22.91 MHz ( period = 43.654 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~64  ; clk        ; clk      ; None                        ; None                      ; 21.602 ns               ;
+; N/A                                     ; 22.91 MHz ( period = 43.652 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~15  ; clk        ; clk      ; None                        ; None                      ; 21.583 ns               ;
+; N/A                                     ; 22.91 MHz ( period = 43.652 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~399 ; clk        ; clk      ; None                        ; None                      ; 21.583 ns               ;
+; N/A                                     ; 22.91 MHz ( period = 43.646 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~463 ; clk        ; clk      ; None                        ; None                      ; 21.586 ns               ;
+; N/A                                     ; 22.91 MHz ( period = 43.644 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~298 ; clk        ; clk      ; None                        ; None                      ; 21.583 ns               ;
+; N/A                                     ; 22.92 MHz ( period = 43.636 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~79  ; clk        ; clk      ; None                        ; None                      ; 21.587 ns               ;
+; N/A                                     ; 22.92 MHz ( period = 43.634 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~118 ; clk        ; clk      ; None                        ; None                      ; 21.527 ns               ;
+; N/A                                     ; 22.92 MHz ( period = 43.634 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~342 ; clk        ; clk      ; None                        ; None                      ; 21.527 ns               ;
+; N/A                                     ; 22.92 MHz ( period = 43.628 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~15  ; clk        ; clk      ; None                        ; None                      ; 21.569 ns               ;
+; N/A                                     ; 22.92 MHz ( period = 43.628 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~399 ; clk        ; clk      ; None                        ; None                      ; 21.569 ns               ;
+; N/A                                     ; 22.93 MHz ( period = 43.612 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~79  ; clk        ; clk      ; None                        ; None                      ; 21.573 ns               ;
+; N/A                                     ; 22.93 MHz ( period = 43.602 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~480 ; clk        ; clk      ; None                        ; None                      ; 21.564 ns               ;
+; N/A                                     ; 22.94 MHz ( period = 43.596 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~448 ; clk        ; clk      ; None                        ; None                      ; 21.563 ns               ;
+; N/A                                     ; 22.95 MHz ( period = 43.578 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~480 ; clk        ; clk      ; None                        ; None                      ; 21.550 ns               ;
+; N/A                                     ; 22.95 MHz ( period = 43.574 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~224 ; clk        ; clk      ; None                        ; None                      ; 21.566 ns               ;
+; N/A                                     ; 22.95 MHz ( period = 43.572 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~448 ; clk        ; clk      ; None                        ; None                      ; 21.549 ns               ;
+; N/A                                     ; 22.96 MHz ( period = 43.562 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~192 ; clk        ; clk      ; None                        ; None                      ; 21.556 ns               ;
+; N/A                                     ; 22.96 MHz ( period = 43.560 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~64  ; clk        ; clk      ; None                        ; None                      ; 21.555 ns               ;
+; N/A                                     ; 22.96 MHz ( period = 43.550 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~224 ; clk        ; clk      ; None                        ; None                      ; 21.552 ns               ;
+; N/A                                     ; 22.96 MHz ( period = 43.548 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~298 ; clk        ; clk      ; None                        ; None                      ; 21.535 ns               ;
+; N/A                                     ; 22.97 MHz ( period = 43.538 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~118 ; clk        ; clk      ; None                        ; None                      ; 21.479 ns               ;
+; N/A                                     ; 22.97 MHz ( period = 43.538 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~342 ; clk        ; clk      ; None                        ; None                      ; 21.479 ns               ;
+; N/A                                     ; 22.98 MHz ( period = 43.524 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~128 ; clk        ; clk      ; None                        ; None                      ; 21.533 ns               ;
+; N/A                                     ; 22.98 MHz ( period = 43.520 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~416 ; clk        ; clk      ; None                        ; None                      ; 21.531 ns               ;
+; N/A                                     ; 22.98 MHz ( period = 43.516 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~2   ; clk        ; clk      ; None                        ; None                      ; 21.535 ns               ;
+; N/A                                     ; 22.99 MHz ( period = 43.498 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~406 ; clk        ; clk      ; None                        ; None                      ; 21.451 ns               ;
+; N/A                                     ; 22.99 MHz ( period = 43.498 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~470 ; clk        ; clk      ; None                        ; None                      ; 21.451 ns               ;
+; N/A                                     ; 22.99 MHz ( period = 43.498 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~374 ; clk        ; clk      ; None                        ; None                      ; 21.459 ns               ;
+; N/A                                     ; 22.99 MHz ( period = 43.490 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~128 ; clk        ; clk      ; None                        ; None                      ; 21.518 ns               ;
+; N/A                                     ; 23.00 MHz ( period = 43.486 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~416 ; clk        ; clk      ; None                        ; None                      ; 21.516 ns               ;
+; N/A                                     ; 23.00 MHz ( period = 43.482 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~2   ; clk        ; clk      ; None                        ; None                      ; 21.520 ns               ;
+; N/A                                     ; 23.00 MHz ( period = 43.474 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~406 ; clk        ; clk      ; None                        ; None                      ; 21.437 ns               ;
+; N/A                                     ; 23.00 MHz ( period = 43.474 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~470 ; clk        ; clk      ; None                        ; None                      ; 21.437 ns               ;
+; N/A                                     ; 23.01 MHz ( period = 43.466 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~235 ; clk        ; clk      ; None                        ; None                      ; 21.480 ns               ;
+; N/A                                     ; 23.01 MHz ( period = 43.464 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~427 ; clk        ; clk      ; None                        ; None                      ; 21.479 ns               ;
+; N/A                                     ; 23.01 MHz ( period = 43.464 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~374 ; clk        ; clk      ; None                        ; None                      ; 21.444 ns               ;
+; N/A                                     ; 23.01 MHz ( period = 43.464 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~303 ; clk        ; clk      ; None                        ; None                      ; 21.493 ns               ;
+; N/A                                     ; 23.01 MHz ( period = 43.454 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~298 ; clk        ; clk      ; None                        ; None                      ; 21.488 ns               ;
+; N/A                                     ; 23.02 MHz ( period = 43.446 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~278 ; clk        ; clk      ; None                        ; None                      ; 21.447 ns               ;
+; N/A                                     ; 23.02 MHz ( period = 43.444 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~118 ; clk        ; clk      ; None                        ; None                      ; 21.432 ns               ;
+; N/A                                     ; 23.02 MHz ( period = 43.444 ns )                    ; Instruction:ins|temp4[7] ; RegFile:regfile|REG_Files~342 ; clk        ; clk      ; None                        ; None                      ; 21.432 ns               ;
+; N/A                                     ; 23.02 MHz ( period = 43.440 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~303 ; clk        ; clk      ; None                        ; None                      ; 21.479 ns               ;
+; N/A                                     ; 23.02 MHz ( period = 43.432 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~235 ; clk        ; clk      ; None                        ; None                      ; 21.465 ns               ;
+; N/A                                     ; 23.03 MHz ( period = 43.430 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~96  ; clk        ; clk      ; None                        ; None                      ; 21.485 ns               ;
+; N/A                                     ; 23.03 MHz ( period = 43.430 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~427 ; clk        ; clk      ; None                        ; None                      ; 21.464 ns               ;
+; N/A                                     ; 23.03 MHz ( period = 43.424 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~32  ; clk        ; clk      ; None                        ; None                      ; 21.482 ns               ;
+; N/A                                     ; 23.04 MHz ( period = 43.412 ns )                    ; Instruction:ins|temp4[2] ; RegFile:regfile|REG_Files~278 ; clk        ; clk      ; None                        ; None                      ; 21.432 ns               ;
+; N/A                                     ; 23.04 MHz ( period = 43.406 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~96  ; clk        ; clk      ; None                        ; None                      ; 21.471 ns               ;
+; N/A                                     ; 23.04 MHz ( period = 43.400 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~160 ; clk        ; clk      ; None                        ; None                      ; 21.483 ns               ;
+; N/A                                     ; 23.04 MHz ( period = 43.400 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~32  ; clk        ; clk      ; None                        ; None                      ; 21.468 ns               ;
+; N/A                                     ; 23.04 MHz ( period = 43.394 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~128 ; clk        ; clk      ; None                        ; None                      ; 21.470 ns               ;
+; N/A                                     ; 23.05 MHz ( period = 43.392 ns )                    ; Instruction:ins|temp4[6] ; RegFile:regfile|REG_Files~288 ; clk        ; clk      ; None                        ; None                      ; 21.479 ns               ;
+; N/A                                     ; 23.05 MHz ( period = 43.390 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~416 ; clk        ; clk      ; None                        ; None                      ; 21.468 ns               ;
+; N/A                                     ; 23.05 MHz ( period = 43.386 ns )                    ; Instruction:ins|temp4[4] ; RegFile:regfile|REG_Files~2   ; clk        ; clk      ; None                        ; None                      ; 21.472 ns               ;
+; N/A                                     ; 23.05 MHz ( period = 43.378 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~86  ; clk        ; clk      ; None                        ; None                      ; 21.440 ns               ;
+; N/A                                     ; 23.05 MHz ( period = 43.376 ns )                    ; Instruction:ins|temp4[3] ; RegFile:regfile|REG_Files~160 ; clk        ; clk      ; None                        ; None                      ; 21.469 ns               ;
+; N/A                                     ; 23.05 MHz ( period = 43.376 ns )                    ; Instruction:ins|temp4[5] ; RegFile:regfile|REG_Files~22  ; clk        ; clk      ; None                        ; None                      ; 21.439 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                          ;                               ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                                                   ;
++-----------------------------------------+-----------------------------------------------------+------------+-------------------------------+-------------+------------+
+; Slack                                   ; Required tco                                        ; Actual tco ; From                          ; To          ; From Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+-------------------------------+-------------+------------+
+; N/A                                     ; None                                                ; 28.514 ns  ; Instruction:ins|temp4[5]      ; DataOut[8]  ; clk        ;
+; N/A                                     ; None                                                ; 28.497 ns  ; Instruction:ins|temp4[2]      ; DataOut[8]  ; clk        ;
+; N/A                                     ; None                                                ; 28.449 ns  ; Instruction:ins|temp4[4]      ; DataOut[8]  ; clk        ;
+; N/A                                     ; None                                                ; 28.422 ns  ; Instruction:ins|temp4[5]      ; DataOut[15] ; clk        ;
+; N/A                                     ; None                                                ; 28.405 ns  ; Instruction:ins|temp4[2]      ; DataOut[15] ; clk        ;
+; N/A                                     ; None                                                ; 28.402 ns  ; Instruction:ins|temp4[7]      ; DataOut[8]  ; clk        ;
+; N/A                                     ; None                                                ; 28.357 ns  ; Instruction:ins|temp4[4]      ; DataOut[15] ; clk        ;
+; N/A                                     ; None                                                ; 28.310 ns  ; Instruction:ins|temp4[7]      ; DataOut[15] ; clk        ;
+; N/A                                     ; None                                                ; 28.252 ns  ; Instruction:ins|temp4[6]      ; DataOut[8]  ; clk        ;
+; N/A                                     ; None                                                ; 28.242 ns  ; Instruction:ins|temp4[5]      ; busW[15]    ; clk        ;
+; N/A                                     ; None                                                ; 28.240 ns  ; Instruction:ins|temp4[3]      ; DataOut[8]  ; clk        ;
+; N/A                                     ; None                                                ; 28.225 ns  ; Instruction:ins|temp4[2]      ; busW[15]    ; clk        ;
+; N/A                                     ; None                                                ; 28.177 ns  ; Instruction:ins|temp4[4]      ; busW[15]    ; clk        ;
+; N/A                                     ; None                                                ; 28.167 ns  ; Instruction:ins|temp4[5]      ; DataOut[26] ; clk        ;
+; N/A                                     ; None                                                ; 28.160 ns  ; Instruction:ins|temp4[6]      ; DataOut[15] ; clk        ;
+; N/A                                     ; None                                                ; 28.150 ns  ; Instruction:ins|temp4[2]      ; DataOut[26] ; clk        ;
+; N/A                                     ; None                                                ; 28.148 ns  ; Instruction:ins|temp4[3]      ; DataOut[15] ; clk        ;
+; N/A                                     ; None                                                ; 28.130 ns  ; Instruction:ins|temp4[7]      ; busW[15]    ; clk        ;
+; N/A                                     ; None                                                ; 28.102 ns  ; Instruction:ins|temp4[4]      ; DataOut[26] ; clk        ;
+; N/A                                     ; None                                                ; 28.055 ns  ; Instruction:ins|temp4[7]      ; DataOut[26] ; clk        ;
+; N/A                                     ; None                                                ; 27.980 ns  ; Instruction:ins|temp4[6]      ; busW[15]    ; clk        ;
+; N/A                                     ; None                                                ; 27.968 ns  ; Instruction:ins|temp4[3]      ; busW[15]    ; clk        ;
+; N/A                                     ; None                                                ; 27.905 ns  ; Instruction:ins|temp4[6]      ; DataOut[26] ; clk        ;
+; N/A                                     ; None                                                ; 27.893 ns  ; Instruction:ins|temp4[3]      ; DataOut[26] ; clk        ;
+; N/A                                     ; None                                                ; 27.846 ns  ; Instruction:ins|temp4[5]      ; DataOut[22] ; clk        ;
+; N/A                                     ; None                                                ; 27.829 ns  ; Instruction:ins|temp4[2]      ; DataOut[22] ; clk        ;
+; N/A                                     ; None                                                ; 27.781 ns  ; Instruction:ins|temp4[4]      ; DataOut[22] ; clk        ;
+; N/A                                     ; None                                                ; 27.753 ns  ; Instruction:ins|temp4[5]      ; DataOut[12] ; clk        ;
+; N/A                                     ; None                                                ; 27.736 ns  ; Instruction:ins|temp4[2]      ; DataOut[12] ; clk        ;
+; N/A                                     ; None                                                ; 27.734 ns  ; Instruction:ins|temp4[7]      ; DataOut[22] ; clk        ;
+; N/A                                     ; None                                                ; 27.688 ns  ; Instruction:ins|temp4[4]      ; DataOut[12] ; clk        ;
+; N/A                                     ; None                                                ; 27.679 ns  ; Instruction:ins|temp4[5]      ; busW[4]     ; clk        ;
+; N/A                                     ; None                                                ; 27.662 ns  ; Instruction:ins|temp4[2]      ; busW[4]     ; clk        ;
+; N/A                                     ; None                                                ; 27.641 ns  ; Instruction:ins|temp4[7]      ; DataOut[12] ; clk        ;
+; N/A                                     ; None                                                ; 27.616 ns  ; Instruction:ins|temp4[5]      ; busW[22]    ; clk        ;
+; N/A                                     ; None                                                ; 27.614 ns  ; Instruction:ins|temp4[4]      ; busW[4]     ; clk        ;
+; N/A                                     ; None                                                ; 27.599 ns  ; Instruction:ins|temp4[2]      ; busW[22]    ; clk        ;
+; N/A                                     ; None                                                ; 27.584 ns  ; Instruction:ins|temp4[6]      ; DataOut[22] ; clk        ;
+; N/A                                     ; None                                                ; 27.572 ns  ; Instruction:ins|temp4[3]      ; DataOut[22] ; clk        ;
+; N/A                                     ; None                                                ; 27.567 ns  ; Instruction:ins|temp4[7]      ; busW[4]     ; clk        ;
+; N/A                                     ; None                                                ; 27.551 ns  ; Instruction:ins|temp4[4]      ; busW[22]    ; clk        ;
+; N/A                                     ; None                                                ; 27.549 ns  ; Instruction:ins|temp4[5]      ; busW[0]     ; clk        ;
+; N/A                                     ; None                                                ; 27.532 ns  ; Instruction:ins|temp4[2]      ; busW[0]     ; clk        ;
+; N/A                                     ; None                                                ; 27.517 ns  ; Instruction:ins|temp4[5]      ; DataOut[21] ; clk        ;
+; N/A                                     ; None                                                ; 27.504 ns  ; Instruction:ins|temp4[7]      ; busW[22]    ; clk        ;
+; N/A                                     ; None                                                ; 27.500 ns  ; Instruction:ins|temp4[2]      ; DataOut[21] ; clk        ;
+; N/A                                     ; None                                                ; 27.491 ns  ; Instruction:ins|temp4[6]      ; DataOut[12] ; clk        ;
+; N/A                                     ; None                                                ; 27.484 ns  ; Instruction:ins|temp4[4]      ; busW[0]     ; clk        ;
+; N/A                                     ; None                                                ; 27.479 ns  ; Instruction:ins|temp4[3]      ; DataOut[12] ; clk        ;
+; N/A                                     ; None                                                ; 27.443 ns  ; Instruction:ins|temp4[4]      ; DataOut[21] ; clk        ;
+; N/A                                     ; None                                                ; 27.437 ns  ; Instruction:ins|temp4[7]      ; busW[0]     ; clk        ;
+; N/A                                     ; None                                                ; 27.417 ns  ; Instruction:ins|temp4[6]      ; busW[4]     ; clk        ;
+; N/A                                     ; None                                                ; 27.405 ns  ; Instruction:ins|temp4[3]      ; busW[4]     ; clk        ;
+; N/A                                     ; None                                                ; 27.377 ns  ; Instruction:ins|temp4[7]      ; DataOut[21] ; clk        ;
+; N/A                                     ; None                                                ; 27.354 ns  ; Instruction:ins|temp4[6]      ; busW[22]    ; clk        ;
+; N/A                                     ; None                                                ; 27.349 ns  ; Instruction:ins|temp4[5]      ; busW[23]    ; clk        ;
+; N/A                                     ; None                                                ; 27.342 ns  ; Instruction:ins|temp4[3]      ; busW[22]    ; clk        ;
+; N/A                                     ; None                                                ; 27.332 ns  ; Instruction:ins|temp4[2]      ; busW[23]    ; clk        ;
+; N/A                                     ; None                                                ; 27.287 ns  ; Instruction:ins|temp4[6]      ; busW[0]     ; clk        ;
+; N/A                                     ; None                                                ; 27.284 ns  ; Instruction:ins|temp4[4]      ; busW[23]    ; clk        ;
+; N/A                                     ; None                                                ; 27.275 ns  ; Instruction:ins|temp4[3]      ; busW[0]     ; clk        ;
+; N/A                                     ; None                                                ; 27.243 ns  ; Instruction:ins|temp4[3]      ; DataOut[21] ; clk        ;
+; N/A                                     ; None                                                ; 27.237 ns  ; Instruction:ins|temp4[7]      ; busW[23]    ; clk        ;
+; N/A                                     ; None                                                ; 27.227 ns  ; Instruction:ins|temp4[6]      ; DataOut[21] ; clk        ;
+; N/A                                     ; None                                                ; 27.172 ns  ; Instruction:ins|temp4[5]      ; busW[14]    ; clk        ;
+; N/A                                     ; None                                                ; 27.161 ns  ; Instruction:ins|temp4[5]      ; DataOut[4]  ; clk        ;
+; N/A                                     ; None                                                ; 27.155 ns  ; Instruction:ins|temp4[2]      ; busW[14]    ; clk        ;
+; N/A                                     ; None                                                ; 27.144 ns  ; Instruction:ins|temp4[2]      ; DataOut[4]  ; clk        ;
+; N/A                                     ; None                                                ; 27.114 ns  ; Instruction:ins|temp4[5]      ; DataOut[30] ; clk        ;
+; N/A                                     ; None                                                ; 27.110 ns  ; Instruction:ins|temp4[5]      ; DataOut[28] ; clk        ;
+; N/A                                     ; None                                                ; 27.107 ns  ; Instruction:ins|temp4[4]      ; busW[14]    ; clk        ;
+; N/A                                     ; None                                                ; 27.097 ns  ; Instruction:ins|temp4[2]      ; DataOut[30] ; clk        ;
+; N/A                                     ; None                                                ; 27.096 ns  ; Instruction:ins|temp4[4]      ; DataOut[4]  ; clk        ;
+; N/A                                     ; None                                                ; 27.093 ns  ; Instruction:ins|temp4[2]      ; DataOut[28] ; clk        ;
+; N/A                                     ; None                                                ; 27.087 ns  ; Instruction:ins|temp4[6]      ; busW[23]    ; clk        ;
+; N/A                                     ; None                                                ; 27.075 ns  ; Instruction:ins|temp4[3]      ; busW[23]    ; clk        ;
+; N/A                                     ; None                                                ; 27.067 ns  ; Instruction:ins|temp4[5]      ; DataOut[14] ; clk        ;
+; N/A                                     ; None                                                ; 27.060 ns  ; Instruction:ins|temp4[7]      ; busW[14]    ; clk        ;
+; N/A                                     ; None                                                ; 27.050 ns  ; Instruction:ins|temp4[2]      ; DataOut[14] ; clk        ;
+; N/A                                     ; None                                                ; 27.049 ns  ; Instruction:ins|temp4[4]      ; DataOut[30] ; clk        ;
+; N/A                                     ; None                                                ; 27.049 ns  ; Instruction:ins|temp4[7]      ; DataOut[4]  ; clk        ;
+; N/A                                     ; None                                                ; 27.045 ns  ; Instruction:ins|temp4[4]      ; DataOut[28] ; clk        ;
+; N/A                                     ; None                                                ; 27.002 ns  ; Instruction:ins|temp4[7]      ; DataOut[30] ; clk        ;
+; N/A                                     ; None                                                ; 27.002 ns  ; Instruction:ins|temp4[4]      ; DataOut[14] ; clk        ;
+; N/A                                     ; None                                                ; 26.998 ns  ; Instruction:ins|temp4[7]      ; DataOut[28] ; clk        ;
+; N/A                                     ; None                                                ; 26.975 ns  ; Instruction:ins|temp4[5]      ; DataOut[3]  ; clk        ;
+; N/A                                     ; None                                                ; 26.958 ns  ; Instruction:ins|temp4[2]      ; DataOut[3]  ; clk        ;
+; N/A                                     ; None                                                ; 26.957 ns  ; Instruction:ins|temp4[5]      ; busW[10]    ; clk        ;
+; N/A                                     ; None                                                ; 26.955 ns  ; Instruction:ins|temp4[7]      ; DataOut[14] ; clk        ;
+; N/A                                     ; None                                                ; 26.954 ns  ; Instruction:ins|temp4[5]      ; DataOut[7]  ; clk        ;
+; N/A                                     ; None                                                ; 26.953 ns  ; Instruction:ins|temp4[5]      ; DataOut[2]  ; clk        ;
+; N/A                                     ; None                                                ; 26.947 ns  ; Instruction:ins|temp4[5]      ; busW[8]     ; clk        ;
+; N/A                                     ; None                                                ; 26.940 ns  ; Instruction:ins|temp4[2]      ; busW[10]    ; clk        ;
+; N/A                                     ; None                                                ; 26.938 ns  ; Instruction:ins|temp4[5]      ; DataOut[10] ; clk        ;
+; N/A                                     ; None                                                ; 26.937 ns  ; Instruction:ins|temp4[2]      ; DataOut[7]  ; clk        ;
+; N/A                                     ; None                                                ; 26.936 ns  ; Instruction:ins|temp4[2]      ; DataOut[2]  ; clk        ;
+; N/A                                     ; None                                                ; 26.930 ns  ; Instruction:ins|temp4[2]      ; busW[8]     ; clk        ;
+; N/A                                     ; None                                                ; 26.925 ns  ; Instruction:ins|temp4[5]      ; busW[18]    ; clk        ;
+; N/A                                     ; None                                                ; 26.921 ns  ; Instruction:ins|temp4[2]      ; DataOut[10] ; clk        ;
+; N/A                                     ; None                                                ; 26.910 ns  ; Instruction:ins|temp4[4]      ; DataOut[3]  ; clk        ;
+; N/A                                     ; None                                                ; 26.910 ns  ; Instruction:ins|temp4[6]      ; busW[14]    ; clk        ;
+; N/A                                     ; None                                                ; 26.908 ns  ; Instruction:ins|temp4[2]      ; busW[18]    ; clk        ;
+; N/A                                     ; None                                                ; 26.899 ns  ; Instruction:ins|temp4[6]      ; DataOut[4]  ; clk        ;
+; N/A                                     ; None                                                ; 26.898 ns  ; Instruction:ins|temp4[3]      ; busW[14]    ; clk        ;
+; N/A                                     ; None                                                ; 26.892 ns  ; Instruction:ins|temp4[4]      ; busW[10]    ; clk        ;
+; N/A                                     ; None                                                ; 26.889 ns  ; Instruction:ins|temp4[4]      ; DataOut[7]  ; clk        ;
+; N/A                                     ; None                                                ; 26.888 ns  ; Instruction:ins|temp4[4]      ; DataOut[2]  ; clk        ;
+; N/A                                     ; None                                                ; 26.887 ns  ; Instruction:ins|temp4[3]      ; DataOut[4]  ; clk        ;
+; N/A                                     ; None                                                ; 26.882 ns  ; Instruction:ins|temp4[4]      ; busW[8]     ; clk        ;
+; N/A                                     ; None                                                ; 26.881 ns  ; Instruction:ins|temp4[5]      ; DataOut[18] ; clk        ;
+; N/A                                     ; None                                                ; 26.873 ns  ; Instruction:ins|temp4[4]      ; DataOut[10] ; clk        ;
+; N/A                                     ; None                                                ; 26.867 ns  ; Instruction:ins|temp4[5]      ; busW[29]    ; clk        ;
+; N/A                                     ; None                                                ; 26.864 ns  ; Instruction:ins|temp4[2]      ; DataOut[18] ; clk        ;
+; N/A                                     ; None                                                ; 26.863 ns  ; Instruction:ins|temp4[7]      ; DataOut[3]  ; clk        ;
+; N/A                                     ; None                                                ; 26.860 ns  ; Instruction:ins|temp4[4]      ; busW[18]    ; clk        ;
+; N/A                                     ; None                                                ; 26.856 ns  ; Instruction:ins|temp4[5]      ; DataOut[6]  ; clk        ;
+; N/A                                     ; None                                                ; 26.852 ns  ; Instruction:ins|temp4[6]      ; DataOut[30] ; clk        ;
+; N/A                                     ; None                                                ; 26.850 ns  ; Instruction:ins|temp4[2]      ; busW[29]    ; clk        ;
+; N/A                                     ; None                                                ; 26.848 ns  ; Instruction:ins|temp4[6]      ; DataOut[28] ; clk        ;
+; N/A                                     ; None                                                ; 26.845 ns  ; Instruction:ins|temp4[7]      ; busW[10]    ; clk        ;
+; N/A                                     ; None                                                ; 26.842 ns  ; Instruction:ins|temp4[7]      ; DataOut[7]  ; clk        ;
+; N/A                                     ; None                                                ; 26.841 ns  ; Instruction:ins|temp4[7]      ; DataOut[2]  ; clk        ;
+; N/A                                     ; None                                                ; 26.840 ns  ; Instruction:ins|temp4[3]      ; DataOut[30] ; clk        ;
+; N/A                                     ; None                                                ; 26.839 ns  ; Instruction:ins|temp4[2]      ; DataOut[6]  ; clk        ;
+; N/A                                     ; None                                                ; 26.836 ns  ; Instruction:ins|temp4[3]      ; DataOut[28] ; clk        ;
+; N/A                                     ; None                                                ; 26.835 ns  ; Instruction:ins|temp4[7]      ; busW[8]     ; clk        ;
+; N/A                                     ; None                                                ; 26.826 ns  ; Instruction:ins|temp4[7]      ; DataOut[10] ; clk        ;
+; N/A                                     ; None                                                ; 26.816 ns  ; Instruction:ins|temp4[4]      ; DataOut[18] ; clk        ;
+; N/A                                     ; None                                                ; 26.813 ns  ; Instruction:ins|temp4[7]      ; busW[18]    ; clk        ;
+; N/A                                     ; None                                                ; 26.805 ns  ; Instruction:ins|temp4[6]      ; DataOut[14] ; clk        ;
+; N/A                                     ; None                                                ; 26.800 ns  ; Instruction:ins|temp4[5]      ; busW[11]    ; clk        ;
+; N/A                                     ; None                                                ; 26.793 ns  ; Instruction:ins|temp4[3]      ; DataOut[14] ; clk        ;
+; N/A                                     ; None                                                ; 26.793 ns  ; Instruction:ins|temp4[4]      ; busW[29]    ; clk        ;
+; N/A                                     ; None                                                ; 26.791 ns  ; Instruction:ins|temp4[4]      ; DataOut[6]  ; clk        ;
+; N/A                                     ; None                                                ; 26.789 ns  ; RegFile:regfile|REG_Files~73  ; DataOut[8]  ; clk        ;
+; N/A                                     ; None                                                ; 26.783 ns  ; Instruction:ins|temp4[2]      ; busW[11]    ; clk        ;
+; N/A                                     ; None                                                ; 26.769 ns  ; Instruction:ins|temp4[7]      ; DataOut[18] ; clk        ;
+; N/A                                     ; None                                                ; 26.744 ns  ; Instruction:ins|temp4[7]      ; DataOut[6]  ; clk        ;
+; N/A                                     ; None                                                ; 26.736 ns  ; Instruction:ins|temp4[5]      ; busW[20]    ; clk        ;
+; N/A                                     ; None                                                ; 26.735 ns  ; Instruction:ins|temp4[4]      ; busW[11]    ; clk        ;
+; N/A                                     ; None                                                ; 26.732 ns  ; Instruction:ins|temp4[5]      ; busW[2]     ; clk        ;
+; N/A                                     ; None                                                ; 26.727 ns  ; Instruction:ins|temp4[7]      ; busW[29]    ; clk        ;
+; N/A                                     ; None                                                ; 26.719 ns  ; Instruction:ins|temp4[2]      ; busW[20]    ; clk        ;
+; N/A                                     ; None                                                ; 26.715 ns  ; Instruction:ins|temp4[2]      ; busW[2]     ; clk        ;
+; N/A                                     ; None                                                ; 26.713 ns  ; Instruction:ins|temp4[6]      ; DataOut[3]  ; clk        ;
+; N/A                                     ; None                                                ; 26.701 ns  ; Instruction:ins|temp4[3]      ; DataOut[3]  ; clk        ;
+; N/A                                     ; None                                                ; 26.697 ns  ; RegFile:regfile|REG_Files~73  ; DataOut[15] ; clk        ;
+; N/A                                     ; None                                                ; 26.695 ns  ; Instruction:ins|temp4[6]      ; busW[10]    ; clk        ;
+; N/A                                     ; None                                                ; 26.692 ns  ; Instruction:ins|temp4[6]      ; DataOut[7]  ; clk        ;
+; N/A                                     ; None                                                ; 26.691 ns  ; Instruction:ins|temp4[6]      ; DataOut[2]  ; clk        ;
+; N/A                                     ; None                                                ; 26.688 ns  ; Instruction:ins|temp4[7]      ; busW[11]    ; clk        ;
+; N/A                                     ; None                                                ; 26.685 ns  ; Instruction:ins|temp4[6]      ; busW[8]     ; clk        ;
+; N/A                                     ; None                                                ; 26.683 ns  ; Instruction:ins|temp4[3]      ; busW[10]    ; clk        ;
+; N/A                                     ; None                                                ; 26.680 ns  ; Instruction:ins|temp4[3]      ; DataOut[7]  ; clk        ;
+; N/A                                     ; None                                                ; 26.679 ns  ; Instruction:ins|temp4[3]      ; DataOut[2]  ; clk        ;
+; N/A                                     ; None                                                ; 26.676 ns  ; Instruction:ins|temp4[6]      ; DataOut[10] ; clk        ;
+; N/A                                     ; None                                                ; 26.673 ns  ; Instruction:ins|temp4[3]      ; busW[8]     ; clk        ;
+; N/A                                     ; None                                                ; 26.671 ns  ; Instruction:ins|temp4[4]      ; busW[20]    ; clk        ;
+; N/A                                     ; None                                                ; 26.667 ns  ; Instruction:ins|temp4[5]      ; DataOut[16] ; clk        ;
+; N/A                                     ; None                                                ; 26.667 ns  ; Instruction:ins|temp4[4]      ; busW[2]     ; clk        ;
+; N/A                                     ; None                                                ; 26.666 ns  ; Instruction:ins|temp4[5]      ; DataOut[24] ; clk        ;
+; N/A                                     ; None                                                ; 26.664 ns  ; Instruction:ins|temp4[3]      ; DataOut[10] ; clk        ;
+; N/A                                     ; None                                                ; 26.663 ns  ; Instruction:ins|temp4[6]      ; busW[18]    ; clk        ;
+; N/A                                     ; None                                                ; 26.651 ns  ; Instruction:ins|temp4[5]      ; DataOut[20] ; clk        ;
+; N/A                                     ; None                                                ; 26.651 ns  ; Instruction:ins|temp4[3]      ; busW[18]    ; clk        ;
+; N/A                                     ; None                                                ; 26.650 ns  ; Instruction:ins|temp4[2]      ; DataOut[16] ; clk        ;
+; N/A                                     ; None                                                ; 26.649 ns  ; Instruction:ins|temp4[2]      ; DataOut[24] ; clk        ;
+; N/A                                     ; None                                                ; 26.634 ns  ; Instruction:ins|temp4[2]      ; DataOut[20] ; clk        ;
+; N/A                                     ; None                                                ; 26.624 ns  ; Instruction:ins|temp4[7]      ; busW[20]    ; clk        ;
+; N/A                                     ; None                                                ; 26.620 ns  ; Instruction:ins|temp4[7]      ; busW[2]     ; clk        ;
+; N/A                                     ; None                                                ; 26.619 ns  ; Instruction:ins|temp4[6]      ; DataOut[18] ; clk        ;
+; N/A                                     ; None                                                ; 26.618 ns  ; Instruction:ins|temp4[5]      ; busW[28]    ; clk        ;
+; N/A                                     ; None                                                ; 26.612 ns  ; Instruction:ins|temp4[5]      ; busW[25]    ; clk        ;
+; N/A                                     ; None                                                ; 26.607 ns  ; Instruction:ins|temp4[3]      ; DataOut[18] ; clk        ;
+; N/A                                     ; None                                                ; 26.602 ns  ; Instruction:ins|temp4[4]      ; DataOut[16] ; clk        ;
+; N/A                                     ; None                                                ; 26.601 ns  ; Instruction:ins|temp4[4]      ; DataOut[24] ; clk        ;
+; N/A                                     ; None                                                ; 26.601 ns  ; Instruction:ins|temp4[2]      ; busW[28]    ; clk        ;
+; N/A                                     ; None                                                ; 26.595 ns  ; Instruction:ins|temp4[2]      ; busW[25]    ; clk        ;
+; N/A                                     ; None                                                ; 26.594 ns  ; Instruction:ins|temp4[6]      ; DataOut[6]  ; clk        ;
+; N/A                                     ; None                                                ; 26.593 ns  ; Instruction:ins|temp4[3]      ; busW[29]    ; clk        ;
+; N/A                                     ; None                                                ; 26.586 ns  ; Instruction:ins|temp4[4]      ; DataOut[20] ; clk        ;
+; N/A                                     ; None                                                ; 26.582 ns  ; Instruction:ins|temp4[3]      ; DataOut[6]  ; clk        ;
+; N/A                                     ; None                                                ; 26.577 ns  ; Instruction:ins|temp4[6]      ; busW[29]    ; clk        ;
+; N/A                                     ; None                                                ; 26.555 ns  ; Instruction:ins|temp4[7]      ; DataOut[16] ; clk        ;
+; N/A                                     ; None                                                ; 26.554 ns  ; Instruction:ins|temp4[7]      ; DataOut[24] ; clk        ;
+; N/A                                     ; None                                                ; 26.553 ns  ; Instruction:ins|temp4[4]      ; busW[28]    ; clk        ;
+; N/A                                     ; None                                                ; 26.553 ns  ; Instruction:ins|temp4[5]      ; busW[16]    ; clk        ;
+; N/A                                     ; None                                                ; 26.547 ns  ; RegFile:regfile|REG_Files~229 ; DataOut[8]  ; clk        ;
+; N/A                                     ; None                                                ; 26.539 ns  ; Instruction:ins|temp4[5]      ; DataOut[27] ; clk        ;
+; N/A                                     ; None                                                ; 26.539 ns  ; Instruction:ins|temp4[7]      ; DataOut[20] ; clk        ;
+; N/A                                     ; None                                                ; 26.538 ns  ; Instruction:ins|temp4[4]      ; busW[25]    ; clk        ;
+; N/A                                     ; None                                                ; 26.538 ns  ; Instruction:ins|temp4[6]      ; busW[11]    ; clk        ;
+; N/A                                     ; None                                                ; 26.536 ns  ; Instruction:ins|temp4[5]      ; busW[24]    ; clk        ;
+; N/A                                     ; None                                                ; 26.536 ns  ; Instruction:ins|temp4[2]      ; busW[16]    ; clk        ;
+; N/A                                     ; None                                                ; 26.526 ns  ; Instruction:ins|temp4[3]      ; busW[11]    ; clk        ;
+; N/A                                     ; None                                                ; 26.522 ns  ; Instruction:ins|temp4[2]      ; DataOut[27] ; clk        ;
+; N/A                                     ; None                                                ; 26.520 ns  ; Instruction:ins|temp4[5]      ; busW[26]    ; clk        ;
+; N/A                                     ; None                                                ; 26.519 ns  ; Instruction:ins|temp4[2]      ; busW[24]    ; clk        ;
+; N/A                                     ; None                                                ; 26.517 ns  ; RegFile:regfile|REG_Files~73  ; busW[15]    ; clk        ;
+; N/A                                     ; None                                                ; 26.506 ns  ; Instruction:ins|temp4[7]      ; busW[28]    ; clk        ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;                               ;             ;            ;
++-----------------------------------------+-----------------------------------------------------+------------+-------------------------------+-------------+------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Dec 15 23:55:57 2022
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off SingleCircleCPU -c SingleCircleCPU --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 22.19 MHz between source register "Instruction:ins|temp4[5]" and destination register "RegFile:regfile|REG_Files~47" (period= 45.064 ns)
+    Info: + Longest register to register delay is 22.281 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X5_Y25_N23; Fanout = 25; REG Node = 'Instruction:ins|temp4[5]'
+        Info: 2: + IC(0.840 ns) + CELL(0.436 ns) = 1.276 ns; Loc. = LCCOMB_X5_Y22_N2; Fanout = 2; COMB Node = 'Instruction:ins|Mux12~0'
+        Info: 3: + IC(0.243 ns) + CELL(0.150 ns) = 1.669 ns; Loc. = LCCOMB_X5_Y22_N0; Fanout = 123; COMB Node = 'Instruction:ins|Mux12~1'
+        Info: 4: + IC(1.227 ns) + CELL(0.419 ns) = 3.315 ns; Loc. = LCCOMB_X4_Y15_N4; Fanout = 1; COMB Node = 'RegFile:regfile|REG_Files~1274'
+        Info: 5: + IC(0.741 ns) + CELL(0.150 ns) = 4.206 ns; Loc. = LCCOMB_X4_Y19_N12; Fanout = 1; COMB Node = 'RegFile:regfile|REG_Files~1275'
+        Info: 6: + IC(1.057 ns) + CELL(0.275 ns) = 5.538 ns; Loc. = LCCOMB_X5_Y11_N8; Fanout = 261; COMB Node = 'RegFile:regfile|REG_Files~1283'
+        Info: 7: + IC(1.058 ns) + CELL(0.150 ns) = 6.746 ns; Loc. = LCCOMB_X6_Y17_N4; Fanout = 2; COMB Node = 'ALU:alu|concat~30'
+        Info: 8: + IC(0.440 ns) + CELL(0.393 ns) = 7.579 ns; Loc. = LCCOMB_X7_Y17_N2; Fanout = 2; COMB Node = 'ALU:alu|Add0~21'
+        Info: 9: + IC(0.000 ns) + CELL(0.071 ns) = 7.650 ns; Loc. = LCCOMB_X7_Y17_N4; Fanout = 2; COMB Node = 'ALU:alu|Add0~23'
+        Info: 10: + IC(0.000 ns) + CELL(0.071 ns) = 7.721 ns; Loc. = LCCOMB_X7_Y17_N6; Fanout = 2; COMB Node = 'ALU:alu|Add0~25'
+        Info: 11: + IC(0.000 ns) + CELL(0.071 ns) = 7.792 ns; Loc. = LCCOMB_X7_Y17_N8; Fanout = 2; COMB Node = 'ALU:alu|Add0~27'
+        Info: 12: + IC(0.000 ns) + CELL(0.071 ns) = 7.863 ns; Loc. = LCCOMB_X7_Y17_N10; Fanout = 2; COMB Node = 'ALU:alu|Add0~29'
+        Info: 13: + IC(0.000 ns) + CELL(0.071 ns) = 7.934 ns; Loc. = LCCOMB_X7_Y17_N12; Fanout = 2; COMB Node = 'ALU:alu|Add0~31'
+        Info: 14: + IC(0.000 ns) + CELL(0.159 ns) = 8.093 ns; Loc. = LCCOMB_X7_Y17_N14; Fanout = 2; COMB Node = 'ALU:alu|Add0~33'
+        Info: 15: + IC(0.000 ns) + CELL(0.071 ns) = 8.164 ns; Loc. = LCCOMB_X7_Y17_N16; Fanout = 2; COMB Node = 'ALU:alu|Add0~35'
+        Info: 16: + IC(0.000 ns) + CELL(0.071 ns) = 8.235 ns; Loc. = LCCOMB_X7_Y17_N18; Fanout = 2; COMB Node = 'ALU:alu|Add0~37'
+        Info: 17: + IC(0.000 ns) + CELL(0.071 ns) = 8.306 ns; Loc. = LCCOMB_X7_Y17_N20; Fanout = 2; COMB Node = 'ALU:alu|Add0~39'
+        Info: 18: + IC(0.000 ns) + CELL(0.071 ns) = 8.377 ns; Loc. = LCCOMB_X7_Y17_N22; Fanout = 2; COMB Node = 'ALU:alu|Add0~41'
+        Info: 19: + IC(0.000 ns) + CELL(0.071 ns) = 8.448 ns; Loc. = LCCOMB_X7_Y17_N24; Fanout = 2; COMB Node = 'ALU:alu|Add0~43'
+        Info: 20: + IC(0.000 ns) + CELL(0.071 ns) = 8.519 ns; Loc. = LCCOMB_X7_Y17_N26; Fanout = 2; COMB Node = 'ALU:alu|Add0~45'
+        Info: 21: + IC(0.000 ns) + CELL(0.071 ns) = 8.590 ns; Loc. = LCCOMB_X7_Y17_N28; Fanout = 2; COMB Node = 'ALU:alu|Add0~47'
+        Info: 22: + IC(0.000 ns) + CELL(0.146 ns) = 8.736 ns; Loc. = LCCOMB_X7_Y17_N30; Fanout = 2; COMB Node = 'ALU:alu|Add0~49'
+        Info: 23: + IC(0.000 ns) + CELL(0.071 ns) = 8.807 ns; Loc. = LCCOMB_X7_Y16_N0; Fanout = 2; COMB Node = 'ALU:alu|Add0~51'
+        Info: 24: + IC(0.000 ns) + CELL(0.071 ns) = 8.878 ns; Loc. = LCCOMB_X7_Y16_N2; Fanout = 2; COMB Node = 'ALU:alu|Add0~53'
+        Info: 25: + IC(0.000 ns) + CELL(0.071 ns) = 8.949 ns; Loc. = LCCOMB_X7_Y16_N4; Fanout = 2; COMB Node = 'ALU:alu|Add0~55'
+        Info: 26: + IC(0.000 ns) + CELL(0.071 ns) = 9.020 ns; Loc. = LCCOMB_X7_Y16_N6; Fanout = 2; COMB Node = 'ALU:alu|Add0~57'
+        Info: 27: + IC(0.000 ns) + CELL(0.071 ns) = 9.091 ns; Loc. = LCCOMB_X7_Y16_N8; Fanout = 2; COMB Node = 'ALU:alu|Add0~59'
+        Info: 28: + IC(0.000 ns) + CELL(0.071 ns) = 9.162 ns; Loc. = LCCOMB_X7_Y16_N10; Fanout = 2; COMB Node = 'ALU:alu|Add0~61'
+        Info: 29: + IC(0.000 ns) + CELL(0.071 ns) = 9.233 ns; Loc. = LCCOMB_X7_Y16_N12; Fanout = 2; COMB Node = 'ALU:alu|Add0~63'
+        Info: 30: + IC(0.000 ns) + CELL(0.159 ns) = 9.392 ns; Loc. = LCCOMB_X7_Y16_N14; Fanout = 1; COMB Node = 'ALU:alu|Add0~65'
+        Info: 31: + IC(0.000 ns) + CELL(0.410 ns) = 9.802 ns; Loc. = LCCOMB_X7_Y16_N16; Fanout = 1; COMB Node = 'ALU:alu|Add0~66'
+        Info: 32: + IC(0.252 ns) + CELL(0.275 ns) = 10.329 ns; Loc. = LCCOMB_X7_Y16_N28; Fanout = 26; COMB Node = 'ALU:alu|Mux10~4'
+        Info: 33: + IC(1.490 ns) + CELL(0.242 ns) = 12.061 ns; Loc. = LCCOMB_X31_Y17_N10; Fanout = 60; COMB Node = 'cache:mem|Mem~8375'
+        Info: 34: + IC(1.527 ns) + CELL(0.150 ns) = 13.738 ns; Loc. = LCCOMB_X12_Y20_N0; Fanout = 1; COMB Node = 'cache:mem|Mem~10933'
+        Info: 35: + IC(0.259 ns) + CELL(0.150 ns) = 14.147 ns; Loc. = LCCOMB_X12_Y20_N10; Fanout = 1; COMB Node = 'cache:mem|Mem~10934'
+        Info: 36: + IC(1.469 ns) + CELL(0.150 ns) = 15.766 ns; Loc. = LCCOMB_X29_Y18_N28; Fanout = 1; COMB Node = 'cache:mem|Mem~10935'
+        Info: 37: + IC(0.244 ns) + CELL(0.150 ns) = 16.160 ns; Loc. = LCCOMB_X29_Y18_N10; Fanout = 1; COMB Node = 'cache:mem|Mem~10938'
+        Info: 38: + IC(0.246 ns) + CELL(0.150 ns) = 16.556 ns; Loc. = LCCOMB_X29_Y18_N8; Fanout = 1; COMB Node = 'cache:mem|Mem~10939'
+        Info: 39: + IC(1.440 ns) + CELL(0.150 ns) = 18.146 ns; Loc. = LCCOMB_X18_Y21_N0; Fanout = 1; COMB Node = 'cache:mem|Mem~10950'
+        Info: 40: + IC(0.242 ns) + CELL(0.150 ns) = 18.538 ns; Loc. = LCCOMB_X18_Y21_N6; Fanout = 1; COMB Node = 'cache:mem|Mem~10993'
+        Info: 41: + IC(1.434 ns) + CELL(0.150 ns) = 20.122 ns; Loc. = LCCOMB_X3_Y19_N28; Fanout = 1; COMB Node = 'cache:mem|Mem~11036'
+        Info: 42: + IC(0.243 ns) + CELL(0.150 ns) = 20.515 ns; Loc. = LCCOMB_X3_Y19_N26; Fanout = 2; COMB Node = 'cache:mem|Mem~11037'
+        Info: 43: + IC(0.250 ns) + CELL(0.150 ns) = 20.915 ns; Loc. = LCCOMB_X3_Y19_N12; Fanout = 17; COMB Node = 'mux2to1:mux3|busOut[15]~15'
+        Info: 44: + IC(1.000 ns) + CELL(0.366 ns) = 22.281 ns; Loc. = LCFF_X2_Y18_N23; Fanout = 2; REG Node = 'RegFile:regfile|REG_Files~47'
+        Info: Total cell delay = 6.579 ns ( 29.53 % )
+        Info: Total interconnect delay = 15.702 ns ( 70.47 % )
+    Info: - Smallest clock skew is -0.037 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 2.847 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.114 ns) + CELL(0.000 ns) = 1.103 ns; Loc. = CLKCTRL_G3; Fanout = 8796; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(1.207 ns) + CELL(0.537 ns) = 2.847 ns; Loc. = LCFF_X2_Y18_N23; Fanout = 2; REG Node = 'RegFile:regfile|REG_Files~47'
+            Info: Total cell delay = 1.526 ns ( 53.60 % )
+            Info: Total interconnect delay = 1.321 ns ( 46.40 % )
+        Info: - Longest clock path from clock "clk" to source register is 2.884 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.114 ns) + CELL(0.000 ns) = 1.103 ns; Loc. = CLKCTRL_G3; Fanout = 8796; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(1.244 ns) + CELL(0.537 ns) = 2.884 ns; Loc. = LCFF_X5_Y25_N23; Fanout = 25; REG Node = 'Instruction:ins|temp4[5]'
+            Info: Total cell delay = 1.526 ns ( 52.91 % )
+            Info: Total interconnect delay = 1.358 ns ( 47.09 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tco from clock "clk" to destination pin "DataOut[8]" through register "Instruction:ins|temp4[5]" is 28.514 ns
+    Info: + Longest clock path from clock "clk" to source register is 2.884 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.114 ns) + CELL(0.000 ns) = 1.103 ns; Loc. = CLKCTRL_G3; Fanout = 8796; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.244 ns) + CELL(0.537 ns) = 2.884 ns; Loc. = LCFF_X5_Y25_N23; Fanout = 25; REG Node = 'Instruction:ins|temp4[5]'
+        Info: Total cell delay = 1.526 ns ( 52.91 % )
+        Info: Total interconnect delay = 1.358 ns ( 47.09 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 25.380 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X5_Y25_N23; Fanout = 25; REG Node = 'Instruction:ins|temp4[5]'
+        Info: 2: + IC(0.840 ns) + CELL(0.436 ns) = 1.276 ns; Loc. = LCCOMB_X5_Y22_N2; Fanout = 2; COMB Node = 'Instruction:ins|Mux12~0'
+        Info: 3: + IC(0.243 ns) + CELL(0.150 ns) = 1.669 ns; Loc. = LCCOMB_X5_Y22_N0; Fanout = 123; COMB Node = 'Instruction:ins|Mux12~1'
+        Info: 4: + IC(1.227 ns) + CELL(0.419 ns) = 3.315 ns; Loc. = LCCOMB_X4_Y15_N4; Fanout = 1; COMB Node = 'RegFile:regfile|REG_Files~1274'
+        Info: 5: + IC(0.741 ns) + CELL(0.150 ns) = 4.206 ns; Loc. = LCCOMB_X4_Y19_N12; Fanout = 1; COMB Node = 'RegFile:regfile|REG_Files~1275'
+        Info: 6: + IC(1.057 ns) + CELL(0.275 ns) = 5.538 ns; Loc. = LCCOMB_X5_Y11_N8; Fanout = 261; COMB Node = 'RegFile:regfile|REG_Files~1283'
+        Info: 7: + IC(1.058 ns) + CELL(0.150 ns) = 6.746 ns; Loc. = LCCOMB_X6_Y17_N4; Fanout = 2; COMB Node = 'ALU:alu|concat~30'
+        Info: 8: + IC(0.440 ns) + CELL(0.393 ns) = 7.579 ns; Loc. = LCCOMB_X7_Y17_N2; Fanout = 2; COMB Node = 'ALU:alu|Add0~21'
+        Info: 9: + IC(0.000 ns) + CELL(0.071 ns) = 7.650 ns; Loc. = LCCOMB_X7_Y17_N4; Fanout = 2; COMB Node = 'ALU:alu|Add0~23'
+        Info: 10: + IC(0.000 ns) + CELL(0.071 ns) = 7.721 ns; Loc. = LCCOMB_X7_Y17_N6; Fanout = 2; COMB Node = 'ALU:alu|Add0~25'
+        Info: 11: + IC(0.000 ns) + CELL(0.071 ns) = 7.792 ns; Loc. = LCCOMB_X7_Y17_N8; Fanout = 2; COMB Node = 'ALU:alu|Add0~27'
+        Info: 12: + IC(0.000 ns) + CELL(0.071 ns) = 7.863 ns; Loc. = LCCOMB_X7_Y17_N10; Fanout = 2; COMB Node = 'ALU:alu|Add0~29'
+        Info: 13: + IC(0.000 ns) + CELL(0.071 ns) = 7.934 ns; Loc. = LCCOMB_X7_Y17_N12; Fanout = 2; COMB Node = 'ALU:alu|Add0~31'
+        Info: 14: + IC(0.000 ns) + CELL(0.159 ns) = 8.093 ns; Loc. = LCCOMB_X7_Y17_N14; Fanout = 2; COMB Node = 'ALU:alu|Add0~33'
+        Info: 15: + IC(0.000 ns) + CELL(0.071 ns) = 8.164 ns; Loc. = LCCOMB_X7_Y17_N16; Fanout = 2; COMB Node = 'ALU:alu|Add0~35'
+        Info: 16: + IC(0.000 ns) + CELL(0.071 ns) = 8.235 ns; Loc. = LCCOMB_X7_Y17_N18; Fanout = 2; COMB Node = 'ALU:alu|Add0~37'
+        Info: 17: + IC(0.000 ns) + CELL(0.071 ns) = 8.306 ns; Loc. = LCCOMB_X7_Y17_N20; Fanout = 2; COMB Node = 'ALU:alu|Add0~39'
+        Info: 18: + IC(0.000 ns) + CELL(0.071 ns) = 8.377 ns; Loc. = LCCOMB_X7_Y17_N22; Fanout = 2; COMB Node = 'ALU:alu|Add0~41'
+        Info: 19: + IC(0.000 ns) + CELL(0.071 ns) = 8.448 ns; Loc. = LCCOMB_X7_Y17_N24; Fanout = 2; COMB Node = 'ALU:alu|Add0~43'
+        Info: 20: + IC(0.000 ns) + CELL(0.071 ns) = 8.519 ns; Loc. = LCCOMB_X7_Y17_N26; Fanout = 2; COMB Node = 'ALU:alu|Add0~45'
+        Info: 21: + IC(0.000 ns) + CELL(0.071 ns) = 8.590 ns; Loc. = LCCOMB_X7_Y17_N28; Fanout = 2; COMB Node = 'ALU:alu|Add0~47'
+        Info: 22: + IC(0.000 ns) + CELL(0.146 ns) = 8.736 ns; Loc. = LCCOMB_X7_Y17_N30; Fanout = 2; COMB Node = 'ALU:alu|Add0~49'
+        Info: 23: + IC(0.000 ns) + CELL(0.071 ns) = 8.807 ns; Loc. = LCCOMB_X7_Y16_N0; Fanout = 2; COMB Node = 'ALU:alu|Add0~51'
+        Info: 24: + IC(0.000 ns) + CELL(0.071 ns) = 8.878 ns; Loc. = LCCOMB_X7_Y16_N2; Fanout = 2; COMB Node = 'ALU:alu|Add0~53'
+        Info: 25: + IC(0.000 ns) + CELL(0.071 ns) = 8.949 ns; Loc. = LCCOMB_X7_Y16_N4; Fanout = 2; COMB Node = 'ALU:alu|Add0~55'
+        Info: 26: + IC(0.000 ns) + CELL(0.071 ns) = 9.020 ns; Loc. = LCCOMB_X7_Y16_N6; Fanout = 2; COMB Node = 'ALU:alu|Add0~57'
+        Info: 27: + IC(0.000 ns) + CELL(0.071 ns) = 9.091 ns; Loc. = LCCOMB_X7_Y16_N8; Fanout = 2; COMB Node = 'ALU:alu|Add0~59'
+        Info: 28: + IC(0.000 ns) + CELL(0.071 ns) = 9.162 ns; Loc. = LCCOMB_X7_Y16_N10; Fanout = 2; COMB Node = 'ALU:alu|Add0~61'
+        Info: 29: + IC(0.000 ns) + CELL(0.071 ns) = 9.233 ns; Loc. = LCCOMB_X7_Y16_N12; Fanout = 2; COMB Node = 'ALU:alu|Add0~63'
+        Info: 30: + IC(0.000 ns) + CELL(0.159 ns) = 9.392 ns; Loc. = LCCOMB_X7_Y16_N14; Fanout = 1; COMB Node = 'ALU:alu|Add0~65'
+        Info: 31: + IC(0.000 ns) + CELL(0.410 ns) = 9.802 ns; Loc. = LCCOMB_X7_Y16_N16; Fanout = 1; COMB Node = 'ALU:alu|Add0~66'
+        Info: 32: + IC(0.252 ns) + CELL(0.275 ns) = 10.329 ns; Loc. = LCCOMB_X7_Y16_N28; Fanout = 26; COMB Node = 'ALU:alu|Mux10~4'
+        Info: 33: + IC(0.248 ns) + CELL(0.420 ns) = 10.997 ns; Loc. = LCCOMB_X7_Y16_N26; Fanout = 957; COMB Node = 'ALU:alu|Mux10~5'
+        Info: 34: + IC(1.731 ns) + CELL(0.150 ns) = 12.878 ns; Loc. = LCCOMB_X25_Y15_N30; Fanout = 1; COMB Node = 'cache:mem|Mem~9686'
+        Info: 35: + IC(0.412 ns) + CELL(0.150 ns) = 13.440 ns; Loc. = LCCOMB_X24_Y15_N22; Fanout = 1; COMB Node = 'cache:mem|Mem~9687'
+        Info: 36: + IC(1.348 ns) + CELL(0.275 ns) = 15.063 ns; Loc. = LCCOMB_X25_Y6_N16; Fanout = 1; COMB Node = 'cache:mem|Mem~9690'
+        Info: 37: + IC(1.680 ns) + CELL(0.271 ns) = 17.014 ns; Loc. = LCCOMB_X32_Y19_N22; Fanout = 1; COMB Node = 'cache:mem|Mem~9693'
+        Info: 38: + IC(0.244 ns) + CELL(0.150 ns) = 17.408 ns; Loc. = LCCOMB_X32_Y19_N4; Fanout = 1; COMB Node = 'cache:mem|Mem~9694'
+        Info: 39: + IC(0.439 ns) + CELL(0.150 ns) = 17.997 ns; Loc. = LCCOMB_X31_Y19_N4; Fanout = 2; COMB Node = 'cache:mem|Mem~9822'
+        Info: 40: + IC(1.385 ns) + CELL(0.420 ns) = 19.802 ns; Loc. = LCCOMB_X8_Y19_N18; Fanout = 1; COMB Node = 'cache:mem|Mem~13796'
+        Info: 41: + IC(2.946 ns) + CELL(2.632 ns) = 25.380 ns; Loc. = PIN_W27; Fanout = 0; PIN Node = 'DataOut[8]'
+        Info: Total cell delay = 9.089 ns ( 35.81 % )
+        Info: Total interconnect delay = 16.291 ns ( 64.19 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 310 megabytes
+    Info: Processing ended: Thu Dec 15 23:56:06 2022
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:10
+
+

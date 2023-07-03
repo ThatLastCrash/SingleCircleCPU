@@ -1,0 +1,30 @@
+module Controller(op,func,RegWr,Branch,Jump,ExtOP,AluSrc,AluCtr,MemWr,MemtoReg,RegDst);
+input [5:0]op;
+input [5:0]func;
+
+output RegWr,Branch,Jump,ExtOP,AluSrc,MemWr,MemtoReg,RegDst;
+output [2:0]AluCtr;
+
+
+assign Branch=(!op[5]&!op[4]&!op[3]&op[2]&!op[1]&!op[0]);
+assign Jump=(!op[5]&!op[4]&!op[3]&!op[2]&op[1]&!op[0]);
+assign RegDst=(!op[5]&!op[4]&!op[3]&!op[2]&!op[1]&!op[0]);
+assign AluSrc=(!RegDst)&(!(!op[5]&!op[4]&!op[3]&op[2]&!op[1]&!op[0]));
+assign MemtoReg=(op[5]&!op[4]&!op[3]&!op[2]&op[1]&op[0]);
+assign MemWr=(op[5]&!op[4]&op[3]&!op[2]&op[1]&op[0]);
+assign ExtOP=!(!op[5]&!op[4]&op[3]&op[2]&!op[1]&op[0]);
+
+assign RegWr=(!op[5]&!op[4]&!op[3]&!op[2]&!op[1]&!op[0])
+			+(!op[5]&!op[4]&op[3]&op[2]&!op[1]&op[0])
+			+(!op[5]&!op[4]&op[3]&!op[2]&!op[1]&op[0])
+			+(op[5]&!op[4]&!op[3]&!op[2]&op[1]&op[0]);
+/*
+assign ALUop[2]=!op[5]&!op[4]&!op[3]&op[2]&!op[1]&!op[0];
+assign ALUop[1]=!op[5]&!op[4]&op[3]&op[2]&!op[1]&op[0];
+assign ALUop[0]=!op[5]&!op[4]&!op[3]&!op[2]&!op[1]&!op[0];
+*/
+assign AluCtr[2]=RegDst?(!func[2]&func[1]):(!op[5]&!op[4]&!op[3]&op[2]&!op[1]&!op[0]);
+assign AluCtr[1]=RegDst?(func[3]&!func[2]&func[1]):(!op[5]&!op[4]&op[3]&op[2]&!op[1]&op[0]);
+assign AluCtr[0]=RegDst?((!func[3]&!func[2]&!func[1]&!func[0])+(!func[2]&func[1]&!func[0])):(!op[5]&!op[4]&!op[3]&!op[2]&!op[1]&!op[0]);
+
+endmodule
